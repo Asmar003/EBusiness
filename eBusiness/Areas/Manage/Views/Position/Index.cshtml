@@ -1,0 +1,28 @@
+﻿
+@model ICollection<Position>
+
+<div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (Position item in Model)
+                        {
+                              <tr>
+                                  <td>@item.Name</td>
+                                  <td><a asp-action="Update" asp-controller="Positon" asp-area="Manage" asp-route-id="@item.Id">Update</a></td>
+                                  <td><a asp-action="Delete" asp-controller="Position" asp-area="Manage" asp-route-id="@item.Id">Delete</a></td>
+                              </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
